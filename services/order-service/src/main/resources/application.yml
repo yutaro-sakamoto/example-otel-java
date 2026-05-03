@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: order-service
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+payment:
+  service:
+    url: ${PAYMENT_SERVICE_URL:http://localhost:8081}
